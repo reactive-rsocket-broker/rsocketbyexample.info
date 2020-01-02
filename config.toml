@@ -1,0 +1,33 @@
+baseURL = "/"
+title = "RSocket By Example"
+theme = "hugo-notepadium"
+copyright = "Apache License 2.0"
+
+publishDir = "docs"
+
+languageCode = "zh-cn"
+hasCJKLanguage = false
+
+enableRobotsTXT = false
+
+[markup.highlight]
+codeFences = true
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true  # enable raw HTML in Markdown
+
+[params]
+logo = "/images/rsocket-logo.png"  # if you have a logo png
+slogan = "Make services communicated easy and fast"
+license = "Apache License"  # CC License
+
+[params.syntax]
+use = "chroma"  # builtin: "prismjs", "hljs". "none" means Chroma
+theme = "borland"
+darkTheme = "xcode-dark"  # apply this theme in dark mode
+webFonts = true  # builtin: 'Source Code Pro'
+
+[params.nav]
+showCategories = false       # /categories/
+showTags = false             # /tags/
