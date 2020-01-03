@@ -1,4 +1,7 @@
 <section id="header" class="header max-body-width">
+
+{{- partial "navigation.html" . -}}
+
     <p><a class="home" href="{{- `/` | relURL -}}">
             {{- with .Site.Params.logo -}}
             <img class="site-logo" src="{{- . | relURL -}}" alt />
