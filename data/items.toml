@@ -123,6 +123,11 @@ title = "C++"
 thumb = "/images/language/cpp.png"
 url = "/cpp"
 
+[[polyglot]]
+title = "Microsoft .Net"
+thumb = "/images/language/microsoft-net.png"
+url = "/microsoft-net"
+
 [[observability]]
 title = "Logging"
 thumb = "/images/t-prometheus.png"
