@@ -1,0 +1,38 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+skinparam linetype ortho
+
+!include <cloudinsight/tomcat>
+!include <cloudinsight/mysql>
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+cloud 阿里云 {
+  FA_SERVER(web1,web1) #Green
+  FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+  FA_SERVER(server1,server1) #Yellow
+  web1 <.right.> broker1
+  server1 <.left.> broker1
+}
+
+cloud 腾讯云 {
+  rectangle "<$wechat>\nWechat App" as WeChatApp #Green
+  FA_SERVER(WechatOpenAPI,WechatOpenAPI) #Yellow
+  WeChatApp -left-> WechatOpenAPI
+}
+
+cloud 私有云 {
+   FA_SERVER(ERP,ERP) #Green
+   database "<$mysql>" as MySQL
+   ERP -> MySQL
+}
+
+
+ERP <..> broker1
+WeChatApp <..> broker1
+
+
+@enduml
