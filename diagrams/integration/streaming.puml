@@ -1,0 +1,27 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <cloudinsight/kafka>
+!include <cloudinsight/rabbitmq>
+
+FA_SERVER(App1,App1) #Green
+FA_SERVER(server1,server1) #Yellow
+queue "<$kafka>" as Kafka
+queue "<$rabbitmq>" as RabbitMQ
+
+App1 <..right..> server1 #EF0092: 1. Request/Stream
+
+server1 <.down..> Kafka: 2. Topic Subscribe
+server1 <.down. Kafka: 3. <$message> Messages
+
+server1 <.right..> RabbitMQ: 2. Topic Subscribe
+server1 <.right. RabbitMQ: 3. <$message> Messages
+
+App1 <.right. server1 #EF0092: 4. <$message> Messages
+
+
+@enduml
