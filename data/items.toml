@@ -78,6 +78,11 @@ title = "IoT"
 thumb = "/images/integration/iot.png"
 url = "/iot"
 
+[[integration]]
+title = "Alibaba RSocket Broker"
+thumb = "/images/integration/alibaba-rsocket-broker.png"
+url = "/alibaba-rsocket-broker"
+
 [[polyglot]]
 title = "Java"
 thumb = "/images/language/java.png"
