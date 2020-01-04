@@ -1,0 +1,134 @@
+[[servicecall]]
+title = "request/response(RPC通讯)"
+thumb = "/images/communication/rpc.png"
+url = "/rpc"
+
+[[servicecall]]
+title = "request/stream(Pub/Sub订阅)"
+thumb = "/images/communication/stream.png"
+url = "/stream"
+
+[[servicecall]]
+title = "fire-and-forget(无回执触发)"
+thumb = "/images/communication/fire_and_forget.png"
+url = "/fire-and-forget"
+
+[[servicecall]]
+title = "channel(双向流式通讯)"
+thumb = "/images/communication/channel.png"
+url = "/channel"
+
+[[servicecall]]
+title = "metadata-push(元信息推送)"
+thumb = "/images/communication/metadata_push.png"
+url = "/metadata-push"
+
+[[servicecall]]
+title = "Peer-to-Peer(角色对等)"
+thumb = "/images/communication/p2p.png"
+url = "/p2p"
+
+[[traffic]]
+title = "灰度发布"
+thumb = "/images/traffic/canary.png"
+url = "/canary"
+
+[[traffic]]
+title = "Load Blance(负载均衡)"
+thumb = "/images/traffic/load_balance.png"
+url = "/load-balance"
+
+[[traffic]]
+title = "Back Pressure(被压)"
+thumb = "/images/traffic/back_pressure.png"
+url = "/back-pressure"
+
+[[security]]
+title = "TLS"
+thumb = "/images/security/tls.png"
+url = "/tls"
+
+[[security]]
+title = "JWT Token"
+thumb = "/images/security/jwt.png"
+url = "/jwt"
+
+[[security]]
+title = "ACL(权限验证)"
+thumb = "/images/security/acl.png"
+url = "/authorization"
+
+[[integration]]
+title = "HTTP Ingress Gateway"
+thumb = "/images/t-prometheus.png"
+url = "/http-gateway"
+
+[[integration]]
+title = "Streaming(Kafka)"
+thumb = "/images/t-prometheus.png"
+url = "/streaming"
+
+[[integration]]
+title = "Hybrid Cloud Vendors"
+thumb = "/images/t-prometheus.png"
+url = "/hybrid-cloud-vendors"
+
+[[integration]]
+title = "IoT"
+thumb = "/images/t-prometheus.png"
+url = "/iot"
+
+[[polyglot]]
+title = "Java"
+thumb = "/images/language/java.png"
+url = "/java"
+
+[[polyglot]]
+title = "JavaScript(Node & Brower)"
+thumb = "/images/language/javascript.png"
+url = "/javascript"
+
+[[polyglot]]
+title = "Koltin(Android)"
+thumb = "/images/language/kotlin.png"
+url = "/kotlin"
+
+[[polyglot]]
+title = "Golang"
+thumb = "/images/language/golang.png"
+url = "/golang"
+
+[[polyglot]]
+title = "Ruby"
+thumb = "/images/language/ruby.png"
+url = "/ruby"
+
+[[polyglot]]
+title = "Python"
+thumb = "/images/language/python.png"
+url = "/python"
+
+[[polyglot]]
+title = "Rust"
+thumb = "/images/language/rust.png"
+url = "/rust"
+
+[[polyglot]]
+title = "C++"
+thumb = "/images/language/cpp.png"
+url = "/cpp"
+
+[[observability]]
+title = "Logging"
+thumb = "/images/t-prometheus.png"
+url = "/logging"
+
+[[observability]]
+title = "Metrics with Prometheus"
+thumb = "/images/t-prometheus.png"
+url = "/metrics"
+
+[[observability]]
+title = "OpenTrace"
+thumb = "/images/t-prometheus.png"
+url = "/open-trace"
