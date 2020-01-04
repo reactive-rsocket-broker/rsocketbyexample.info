@@ -59,9 +59,9 @@ thumb = "/images/security/acl.png"
 url = "/authorization"
 
 [[integration]]
-title = "Notification"
-thumb = "/images/t-prometheus.png"
-url = "/http-gateway"
+title = "第三方集成"
+thumb = "/images/integration/open_integration.png"
+url = "/open-integration"
 
 [[integration]]
 title = "Streaming(Kafka)"
@@ -75,7 +75,7 @@ url = "/hybrid-cloud-vendors"
 
 [[integration]]
 title = "IoT"
-thumb = "/images/t-prometheus.png"
+thumb = "/images/integration/iot.png"
 url = "/iot"
 
 [[polyglot]]
