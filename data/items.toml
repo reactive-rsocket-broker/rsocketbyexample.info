@@ -137,3 +137,8 @@ url = "/metrics"
 title = "OpenTrace"
 thumb = "/images/t-prometheus.png"
 url = "/open-trace"
+
+[[misc]]
+title = "Chaos"
+thumb = "/images/t-prometheus.png"
+url = "/chaos"
