@@ -59,18 +59,18 @@ thumb = "/images/security/acl.png"
 url = "/authorization"
 
 [[integration]]
-title = "HTTP Ingress Gateway"
+title = "Notification"
 thumb = "/images/t-prometheus.png"
 url = "/http-gateway"
 
 [[integration]]
 title = "Streaming(Kafka)"
-thumb = "/images/t-prometheus.png"
+thumb = "/images/integration/streaming.png"
 url = "/streaming"
 
 [[integration]]
-title = "Hybrid Cloud Vendors"
-thumb = "/images/t-prometheus.png"
+title = "Hybrid Cloud Vendors(混合云)"
+thumb = "/images/integration/hybrid_cloud.png"
 url = "/hybrid-cloud-vendors"
 
 [[integration]]
