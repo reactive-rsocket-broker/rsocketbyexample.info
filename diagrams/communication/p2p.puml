@@ -1,0 +1,13 @@
+@startuml
+!include ../style.iuml
+
+== Web call Server ==
+web1 --> Server1: RPC-1
+web1 --> Server1: Pub/Sub
+
+== Server call Web ==
+web1 <-- Server1: RPC-3
+web1 <-- Server1: RPC-4
+
+
+@enduml

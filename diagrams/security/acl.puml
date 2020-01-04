@@ -1,0 +1,15 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+Web1 -> Broker: Setup TLS Connection\n <$key> JWT Token
+activate Broker
+Broker -> Broker: Validate JWT and ACL
+
+group <$tls> Security Channel
+	 Web1 --> Broker: <$pass>RPC
+   Web1 <-[#red]-> Broker: <$blocked>Pub/Sub with ACL
+end
+note right : ACL - TenementID, ServiceAccount, Roles
+
+@enduml

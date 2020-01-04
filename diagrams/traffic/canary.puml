@@ -1,0 +1,18 @@
+@startuml
+!include ../style.iuml
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+
+FA_SERVER(web1,web1) #Green
+package UserService{
+  FA_SERVER(instance1,instance1) #Yellow
+  FA_SERVER(instance2,instance2) #Yellow
+}
+
+web1 <..right..> instance1: <font color=red><b>10%
+web1 <..right..> instance2: <font color=green><b>90%
+
+instance1 .[hidden]. instance2
+
+@enduml

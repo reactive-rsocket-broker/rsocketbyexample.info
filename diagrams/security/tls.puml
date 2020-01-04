@@ -1,0 +1,12 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+
+Web1 -> Broker:  Setup TLS Connection
+activate Broker
+group <$tls> Security Channel
+	 Web1 --> Broker: RPC
+   Web1 <--> Broker: Pub/Sub
+end
+@enduml

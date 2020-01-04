@@ -1,0 +1,10 @@
+@startuml
+!include ../style.iuml
+
+Web1 --> Broker: Create Connection
+activate Web1
+Web1 <-- Broker: Configuration 1 Push
+Web1 --> Web1: Logic Action 1
+Web1 <-- Broker: Configuration N Push
+Web1 --> Web1: Logic Action N
+@enduml

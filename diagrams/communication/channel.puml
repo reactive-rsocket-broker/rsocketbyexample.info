@@ -1,0 +1,9 @@
+@startuml
+!include ../style.iuml
+
+group Channel
+	 Web1 <--> Server1: Send Messages
+   Web1 <-- Server1: Receive Messages
+end
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+actor KeyCenter
+Web1 -> KeyCenter: <$keycenter>Get JWT Token
+Web1 <- KeyCenter: <$user> RSA JWT Token
+Web1 -> Broker: Setup TLS Connection\n <$key> JWT Token
+activate Broker
+Broker -> Broker: Validate JWT \n with RSA Public Key
+group <$tls> Security Channel
+	 Web1 --> Broker: RPC
+   Web1 <--> Broker: Pub/Sub
+end
+@enduml

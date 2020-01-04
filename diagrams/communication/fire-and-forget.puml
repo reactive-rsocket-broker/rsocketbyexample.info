@@ -1,0 +1,8 @@
+@startuml
+!include ../style.iuml
+
+Web1 --> Server1: Fire
+activate Server1
+Server1 <-- Server1: Logic Action
+
+@enduml

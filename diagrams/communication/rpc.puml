@@ -1,0 +1,18 @@
+@startuml
+!include ../style.iuml
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+
+FA_SERVER(web1,web1) #Green
+package {
+  FA_SERVER(server1,server1) #Yellow
+  FA_SERVER(server2,server2) #Yellow
+}
+
+web1 <..right..> server1: RPC\nRequest/Response
+web1 <..right..> server2: RPC\nRequest/Response
+
+server1 .[hidden]. server2
+
+@enduml

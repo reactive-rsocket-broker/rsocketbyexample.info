@@ -1,0 +1,11 @@
+@startuml
+!include ../style.iuml
+
+======stream request=======
+Web1 --> Server1: Request N
+activate Server1
+Web1 <-- Server1: Message 1
+Web1 <-- Server1: Message N
+
+
+@enduml
