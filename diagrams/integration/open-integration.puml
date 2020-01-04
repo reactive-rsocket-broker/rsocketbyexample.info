@@ -1,0 +1,29 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+!include <cloudinsight/tomcat>
+!include <cloudinsight/mysql>
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+cloud {
+  FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+  FA_SERVER(server1,server1) #Yellow
+  server1 <.left.> broker1: service call\n message push
+}
+
+cloud {
+  FA_SERVER(App1,App1) #Green
+}
+
+cloud {
+   FA_SERVER(ERP,ERP) #Green
+}
+
+ERP <...> broker1: <$tls>TLS+JWT\n <$message> Notification Push
+App1 <...> broker1: <$tls>TLS+JWT\n <$message> Notification Push
+
+
+@enduml
