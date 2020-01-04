@@ -1,0 +1,36 @@
+@startuml
+!include ../style.iuml
+!include ../sprites.iuml
+
+!include <cloudinsight/redis>
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/car>
+!include <tupadr3/font-awesome/thermometer>
+!include <tupadr3/font-awesome/camera>
+!include <tupadr3/font-awesome/bell>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+cloud Aliyun{
+  FA_SHARE_ALT_SQUARE(CloudBroker,CloudBroker) #Orange
+  FA_SERVER(server1,server1) #Yellow
+  server1 <.left.> CloudBroker #EF0092: 服务调用\n消息/配置推送
+}
+
+cloud Edge {
+  FA_SHARE_ALT_SQUARE(EdgeBroker,EdgeBroker) #Orange
+  rectangle "<$redis>\nRedis" as Redis
+  FA_CAR(Car,Car) #Yellow
+  FA_THERMOMETER(Meter,Meter) #Yellow
+  FA_CAMERA(Camera,Camera) #Yellow
+  FA_BELL(Bell,Bell) #Yellow
+  EdgeBroker ..> Redis: Native
+  EdgeBroker ..> Car: MQTT
+  EdgeBroker ..> Camera: HTTP
+  EdgeBroker ..> Meter: CoAP
+  EdgeBroker ..> Bell: z-wave
+}
+
+EdgeBroker <.up.> CloudBroker #EF0092: 多功能通讯
+
+@enduml
