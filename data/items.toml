@@ -135,7 +135,7 @@ url = "/microsoft-net"
 
 [[observability]]
 title = "Logging"
-thumb = "/images/observability/logging.png"
+thumb = "/images/observability/spring_logback.png"
 url = "/logging"
 
 [[observability]]
