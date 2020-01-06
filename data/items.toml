@@ -152,3 +152,8 @@ url = "/open-trace"
 title = "Chaos"
 thumb = "/images/misc/chaos.png"
 url = "/chaos"
+
+[[misc]]
+title = "30 seconds of Reactive code"
+thumb = "/images/misc/reactive_code.png"
+url = "/reactive-code"
