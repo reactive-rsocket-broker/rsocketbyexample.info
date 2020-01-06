@@ -144,8 +144,8 @@ thumb = "/images/observability/metrics.png"
 url = "/metrics"
 
 [[observability]]
-title = "OpenTrace"
-thumb = "/images/t-prometheus.png"
+title = "Tracing(Zipkin)"
+thumb = "/images/observability/tracing_zipkin.png"
 url = "/open-trace"
 
 [[misc]]
