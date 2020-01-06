@@ -1,0 +1,38 @@
+@startuml
+
+!include ../style.iuml
+!include ../sprites.iuml
+
+!include <cloudinsight/tomcat>
+!include <cloudinsight/kafka>
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+!include <cloudinsight/haproxy>
+
+
+rectangle "<$tomcat>\nWebApp" as App1
+
+rectangle "<$haproxy>\nHTTP Gateway" as Gateway #lightblue
+queue "<$kafka>" as kafka
+
+
+package RSocketBrokerCluster {
+  FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+  FA_SHARE_ALT_SQUARE(broker2,broker2) #Orange
+  broker1 .right. broker2: gossip\n broadcast
+}
+note right: Gossip: Cluster Management \nRouting: Roaring Bitmap \nEvent Spec: CloudEvents
+
+FA_SERVER(server1,server1) #Yellow
+FA_SERVER(server2,server2) #Yellow
+server1 <.up.> broker1: 服务注册
+server2 <.up.> broker1: 服务注册
+kafka <.up.> broker1: Streaming
+
+
+App1 <..> broker1: <$tls>TLS+JWT\n RPC\Stream\nConfiguration Push
+Gateway ..> broker1: HTTP to RSocket
+
+@enduml
