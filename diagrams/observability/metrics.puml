@@ -1,0 +1,22 @@
+@startuml
+
+!include ../style.iuml
+!include ../sprites.iuml
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/tachometer>
+!include <tupadr3/font-awesome/share_alt_square>
+
+package RSocketBrokerCluster {
+  FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+  FA_SHARE_ALT_SQUARE(broker2,broker2) #Orange
+  broker1 .right. broker2: gossip\n broadcast
+}
+
+FA_TACHOMETER(metrics1,Prometheus) #Yellow
+
+metrics1 -up-> broker1: metrics collect
+metrics1 -up-> broker2: metrics collect
+
+@enduml
