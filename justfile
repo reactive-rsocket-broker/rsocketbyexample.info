@@ -10,3 +10,5 @@ deploy_oss: build
 deploy_server: build
   scp -r docs/* root@rsocketbyexample.com:/home/virtual_hosts/rsocketbyexample.com
 
+deploy_github:
+  (cd docs; git add -A; git commit -m "Update content"; git push -u origin master)
