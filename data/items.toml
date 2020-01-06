@@ -84,8 +84,8 @@ thumb = "/images/integration/faas.png"
 url = "/faas"
 
 [[integration]]
-title = "Alibaba RSocket Broker"
-thumb = "/images/integration/alibaba-rsocket-broker.png"
+title = "RSocket Broker"
+thumb = "/images/integration/alibaba_rsocket_broker.png"
 url = "/alibaba-rsocket-broker"
 
 [[polyglot]]
