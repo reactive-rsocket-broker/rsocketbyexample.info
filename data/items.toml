@@ -79,6 +79,11 @@ thumb = "/images/integration/iot.png"
 url = "/iot"
 
 [[integration]]
+title = "FaaS"
+thumb = "/images/integration/faas.png"
+url = "/faas"
+
+[[integration]]
 title = "Alibaba RSocket Broker"
 thumb = "/images/integration/alibaba-rsocket-broker.png"
 url = "/alibaba-rsocket-broker"
