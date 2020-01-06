@@ -1,0 +1,27 @@
+@startuml
+
+!include ../style.iuml
+!include ../sprites.iuml
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+
+rectangle "<$lambda>\nLambda 1" as Lambda1
+rectangle "<$lambda>\nLambda 2" as Lambda2
+
+FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+FA_SERVER(web1,web1) #Green
+
+FA_SERVER(server1,server1) #Yellow
+
+
+Lambda1 .up.> broker1: 函数注册
+Lambda2 .up.> broker1: 函数注册
+
+server1 .left.> broker1: 服务注册
+
+web1 .right.> broker1: 函数和服务调用
+
+
+@enduml
