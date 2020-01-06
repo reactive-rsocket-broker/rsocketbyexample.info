@@ -135,12 +135,12 @@ url = "/microsoft-net"
 
 [[observability]]
 title = "Logging"
-thumb = "/images/t-prometheus.png"
+thumb = "/images/observability/logging.png"
 url = "/logging"
 
 [[observability]]
 title = "Metrics with Prometheus"
-thumb = "/images/t-prometheus.png"
+thumb = "/images/observability/metrics.png"
 url = "/metrics"
 
 [[observability]]
