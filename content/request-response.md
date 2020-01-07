@@ -27,3 +27,15 @@ public interface RSocket extends Availability, Closeable {
 }
 
 ```
+
+### 其他RPC框架对比
+
+|                   | gRPC               | Dubbo               | RSocket            |
+|:------------------|:-------------------|:--------------------|:-------------------|
+| IDL支持            | :white_check_mark: | :red_circle:        | :white_check_mark: |
+| Java Interface支持 | :red_circle:       | :white_check_mark:  | :white_check_mark: |
+| 异步化支持         | :white_check_mark: | :question:          | :white_check_mark: |
+| Back Pressure     | :question:         | :red_circle:        | :white_check_mark: |
+| 元信息支持         | :red_circle:       | :red_circle:        | :white_check_mark: |
+| 自定义序列化        | :red_circle:       | :white_check_mark:  | :white_check_mark: |
+
