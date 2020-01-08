@@ -8,7 +8,8 @@ title = "ACL - 权限验证"
 * AppID: 应用唯一ID，你可以使用应用名称等，确保内部唯一
 * TenentID: 应用所在的公司、组织或者部门ID，这个在后续的多租户设计中用处非常大
 * Service Account: 这个概念来自Kubernetes的设计，同一个service account下的应用可以相互访问
-* Role: 角色列表，如admin, ops等，用于更细粒度的权限控制
+* Role: 角色列表，如admin, ops等，可用于基于角色的权限控制，在Spring Security中可使用hasAnyRole([role1,role2])验证
+* authority List: 权限列表,可用于基于具体权限的控制，如能否更新用户信息、能否访问用户信用卡信息等，在Spring Security中可使用hasAnyAuthority([authority1,authority2])验证
 
 ![Fire-and-Forget Diagram](/images/security/acl.png)
 
