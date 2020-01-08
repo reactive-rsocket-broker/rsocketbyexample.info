@@ -13,7 +13,7 @@ FA_SERVER(ServiceC,Service C) #Green
 package BrokerCluster {
     FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
     FA_SHARE_ALT_SQUARE(broker2,broker2) #Orange
-
+    broker1 <-> broker2
 }
 
 ServiceA <.up.> broker1 #EF0092
