@@ -38,11 +38,6 @@ title = "Load Blance(负载均衡)"
 thumb = "/images/traffic/load_balance.png"
 url = "/load-balance"
 
-[[traffic]]
-title = "Back Pressure(被压)"
-thumb = "/images/traffic/back_pressure.png"
-url = "/back-pressure"
-
 [[security]]
 title = "TLS"
 thumb = "/images/security/tls.png"
