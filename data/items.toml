@@ -38,6 +38,11 @@ title = "Load Blance(负载均衡)"
 thumb = "/images/traffic/load_balance.png"
 url = "/load-balance"
 
+[[traffic]]
+title = "Service Mesh"
+thumb = "/images/traffic/istio_envoy.png"
+url = "/service-mesh"
+
 [[security]]
 title = "TLS"
 thumb = "/images/security/tls.png"
