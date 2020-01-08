@@ -1,17 +1,17 @@
 [[servicecall]]
 title = "request/response(RPC通讯)"
 thumb = "/images/communication/rpc.png"
-url = "/rpc"
+url = "/request-response/"
 
 [[servicecall]]
 title = "request/stream(Pub/Sub订阅)"
 thumb = "/images/communication/stream.png"
-url = "/stream"
+url = "/request-stream/"
 
 [[servicecall]]
-title = "fire-and-forget(无回执触发)"
+title = "fire-and-forget(无回执数据发送)"
 thumb = "/images/communication/fire_and_forget.png"
-url = "/fire-and-forget"
+url = "/fire-and-forget/"
 
 [[servicecall]]
 title = "channel(双向流式通讯)"
