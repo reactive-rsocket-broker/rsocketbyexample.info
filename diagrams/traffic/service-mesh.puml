@@ -1,0 +1,26 @@
+@startuml
+!include ../style.iuml
+skinparam linetype ortho
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/server>
+!include <tupadr3/font-awesome/share_alt_square>
+
+FA_SERVER(ServiceA,ServiceA) #Green
+FA_SERVER(ServiceB,ServiceB) #Green
+FA_SERVER(ServiceC,ServiceC) #Green
+
+package BrokerCluster {
+    FA_SHARE_ALT_SQUARE(broker1,broker1) #Orange
+    FA_SHARE_ALT_SQUARE(broker2,broker2) #Orange
+
+}
+
+ServiceA <.up.> broker1 #EF0092
+ServiceB <.left.> broker1 #EF0092
+ServiceC <..> broker1 #EF0092
+
+ServiceA <.up.> broker2 #EF0092
+ServiceB <.left.> broker2 #EF0092
+ServiceC <..> broker2 #EF0092
+@enduml
