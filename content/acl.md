@@ -13,6 +13,6 @@ title = "ACL - 权限验证"
 
 ![Fire-and-Forget Diagram](/images/security/acl.png)
 
-这些元信息，可以更好地帮助进行细粒度的权限验证，配合RSocket的Filter机制，你可以进行各种ACL Filter扩展。
+这些元信息，可以更好地帮助进行细粒度的权限验证，配合RSocket的Filter机制，你可以进行各种ACL Filter扩展。 关于JWT Token中是否要包含permission claims, 有不同的观点，这里我们不进行讨论。
 
 目前Spring Security已经支持RSocket，关于JWT + ACL的规范整合还在进行中，希望大家持续关注。
