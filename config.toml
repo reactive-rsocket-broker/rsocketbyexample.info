@@ -2,6 +2,7 @@ baseURL = "/"
 title = "RSocket By Example"
 theme = "hugo-notepadium"
 copyright = "Apache License 2.0"
+enableEmoji = true
 
 publishDir = "docs"
 
