@@ -64,3 +64,4 @@
 
 {{- $coreCSS = slice $coreCSS $syntaxCSS | resources.Concat "css/core.css" | minify | fingerprint "sha384" -}}
 <link rel="stylesheet" href="{{- $coreCSS.RelPermalink -}}" integrity="{{- $coreCSS.Data.Integrity -}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.css">
