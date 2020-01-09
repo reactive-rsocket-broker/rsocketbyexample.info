@@ -2,12 +2,18 @@
 title = "关于站点"
 +++
 
+很多同学在第一次接触RSocket的时候都会有这样的疑问，RSocket能做什么？ [rsocket.io](http://rsocket.io) 网站看起来好像空白一片，全部是文本，好像没法解释我心中的疑问。在给出RSocket Tags云图后，好像RSocket什么都能做。如果什么都能做，但是没有实际的设计案例，那么就等于什么都做不了。
 
-RSocket Example主要是将RSocket常见的使用场景和架构模式进行介绍，方便大家在日常架构设计中进行参考，也方便更多的同学了解RSocket这一技术，更多的关于协议介绍，大家可以参考RSocket官方站点 http://rsocket.io 和 Reactive Foundation [https://reactive.foundation](https://reactive.foundation)
+![RSocket Tags Cloud](/images/rsocket_tags.png)
 
-这里也将涉及到的资源进行罗列一下，方便大家参考：
+这个就是RSocket By Example站点的由来，会将基于RSocket常用的案例、设计方法、设计模式等进行整理，方便大家参考。当然我们不可能罗列出所有的适用场景，如果你有更好地基于RSocket的设计想法，也欢迎反馈，我们也会添加到该站点上。
 
-* Project Reactor: https://projectreactor.io/
-* RxJava: https://github.com/ReactiveX/RxJava
-* Netifi Broker: https://www.netifi.com/
-* Alibaba RSocket Broker: https://github.com/alibaba/alibaba-rsocket-broker
+本站大多数的案例出发点都来自下面5个主要考虑因素：
+
+* Convenience: 便捷性。不要那么复杂、晦涩，让每一个开发者都能明白，而且使用简单
+* Speed: 速度。开发速度、运行速度等，都是要考量的因素
+* Security: 安全。现在的架构设计已经不是那个牺牲安全来换取XOXO的时代啦，安全从一开始就就需要考量
+* Cost: 成本。必须是节约客户成本的，而是一套非常复杂的架构设计，客户需要支付额外的基础设施和设备、人员培养、购买商业产品和支持、咨询服务等等，这些统统都不需要。
+* Features: 特性。必须包括丰富的特性，即便现在用不到，但是要能给未来扩展的空间，你的客户/合作方都有用到的潜在可能
+
+希望本站提供的内容能够帮助你更好地理解RSocket及其分布式架构设计，当然非常欢迎你提出宝贵建议。
