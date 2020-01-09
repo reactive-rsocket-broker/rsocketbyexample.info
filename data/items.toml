@@ -54,7 +54,7 @@ thumb = "/images/security/jwt.png"
 url = "/jwt"
 
 [[security]]
-title = "ACL(权限验证)"
+title = "ACL(访问控制列表)"
 thumb = "/images/security/acl.png"
 url = "/acl"
 
