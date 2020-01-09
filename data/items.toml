@@ -133,21 +133,6 @@ title = "Microsoft .Net"
 thumb = "/images/language/microsoft-net.png"
 url = "https://github.com/rsocket/rsocket-net"
 
-[[observability]]
-title = "Logging"
-thumb = "/images/observability/spring_logback.png"
-url = "/logging"
-
-[[observability]]
-title = "Metrics with Prometheus"
-thumb = "/images/observability/metrics.png"
-url = "/metrics"
-
-[[observability]]
-title = "Tracing(Zipkin)"
-thumb = "/images/observability/tracing_zipkin.png"
-url = "/open-trace"
-
 [[misc]]
 title = "Chaos"
 thumb = "/images/misc/chaos.png"
