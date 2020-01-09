@@ -86,7 +86,7 @@ url = "/faas"
 [[integration]]
 title = "RSocket Broker"
 thumb = "/images/integration/alibaba_rsocket_broker.png"
-url = "/alibaba-rsocket-broker"
+url = "/rsocket-broker"
 
 [[polyglot]]
 title = "Java"
