@@ -9,7 +9,7 @@ title = "Hybrid Cloud Vendors - 混合云集成方案"
 
 能否有一个更精简、更便宜的解决方案？ 让我们看一下RSocket是如何解决混合云集成方案的，结构如下：
 
-![Hybrid Cloud](/images/integration/hybrid-cloud-arch.png)
+![Hybrid Cloud](/static/images/integration/hybrid_cloud_arch.png)
 
 我们只需在一个云厂商内部部署一套RSocket Broker集群，然后让各个云托管的应用都连接到该Broker集群上，这样集成就完成啦。 这个解决方案由什么优点？
 
