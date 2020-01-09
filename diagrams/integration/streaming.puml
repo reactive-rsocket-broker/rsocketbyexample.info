@@ -7,9 +7,10 @@
 !include <tupadr3/font-awesome/server>
 !include <cloudinsight/kafka>
 !include <cloudinsight/rabbitmq>
+!include <tupadr3/font-awesome/share_alt_square>
 
 FA_SERVER(App1,App1) #Green
-FA_SERVER(server1,server1) #Yellow
+FA_SHARE_ALT_SQUARE(server1, Streaming Broker) #Yellow
 queue "<$kafka>" as Kafka
 queue "<$rabbitmq>" as RabbitMQ
 
