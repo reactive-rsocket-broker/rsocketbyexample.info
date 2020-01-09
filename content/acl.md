@@ -6,7 +6,7 @@ title = "ACL - 访问控制列表"
 在RSocket的ACL设计中，我们引入了以下几个概念，当然这些信息都保存在JWT Token中，不会增加额外的查询工作。
 
 * AppID: 应用唯一ID，你可以使用应用名称等，确保内部唯一
-* OrgID: 应用所在的公司、组织或者部门ID，这个在后续的多租户设计中用处非常大
+* OrgID: 应用所在的公司、组织或者部门ID，这个在后续的多租户设计中用处非常大，在通常的安全设计中，只有同一组织下的服务才能相互调用，不同组织下的服务是隔离。
 * Service Account: 这个概念来自Kubernetes的设计，同一个service account下的应用可以相互访问
 * Role: 角色列表，如admin, ops等，可用于基于角色的权限控制，在Spring Security中可使用hasAnyRole(role1,role2)验证
 * Authority List: 权限列表,可用于基于具体权限的控制，如能否更新用户信息、能否访问用户信用卡信息等，在Spring Security中可使用hasAnyAuthority(authority1,authority2)验证
