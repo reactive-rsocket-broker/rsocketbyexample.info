@@ -91,7 +91,7 @@ url = "/rsocket-broker"
 [[polyglot]]
 title = "Java"
 thumb = "/images/language/java.png"
-url = "https://github.com/rsocket/rsocket-java"
+url = "/java"
 
 [[polyglot]]
 title = "JavaScript(Node & Brower)"
