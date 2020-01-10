@@ -2,7 +2,7 @@ dev:
   hugo server
 
 build:
-  hugo -t hugo-notepadium
+  hugo -b http://rsocketbyexample.info -t hugo-notepadium
 
 deploy_oss: build
   ossutil cp -r docs oss://rsocketbyexampleus --update
