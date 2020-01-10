@@ -18,6 +18,9 @@ noClasses = false
 [markup.goldmark.renderer]
 unsafe = true  # enable raw HTML in Markdown
 
+[frontmatter]
+lastmod = ["lastmod", ":fileModTime", ":default"]
+
 [params]
 logo = "/images/rsocket-logo.svg"  # if you have a logo png
 slogan = "Make services communicated easy and fast"
