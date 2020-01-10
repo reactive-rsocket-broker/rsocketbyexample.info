@@ -15,7 +15,7 @@ Pub/Sub(发布/订阅)是基于消息的发布订阅模式，也是消息中间�
 
 Push的模型并没有对消息方进行保护，在极限的情况下会导致消费方压力过大，不能即时处理消息，而Pull模型则可以很好地更加自我的处理能力动态调整处理消息的速度。
 
-在RSocket通讯协议中，Pub/Sub的实现是通过Request/Response模式完成的，也就是我们在RSocket接口中看到的以下API:
+在RSocket通讯协议中，Pub/Sub的实现是通过Request/Stream模式完成的，也就是我们在RSocket接口中看到的以下API:
 
 ```java
 
