@@ -12,9 +12,9 @@ title = "负载均衡"
 
 RSocket在协议层设计就考虑到这个问题啦，通过Broker的介入，可以非常简单地解决负载均衡的问题，结构如下：
 
-![Fire-and-Forget Diagram](/images/traffic/load_balance.png)
+![Load Balance Diagram](/images/traffic/load_balance.png)
 
-接下来我们对上述的结构进行阐述一下：
+接下来我们对上述的结构进行一下阐述：
 
 * 服务注册: RSocket协议是对等通讯的，所以服务提供通过主动连接到Broker，然后提供相关的元信息和服务信息，就完成了服务注册。 这种设计还带了非常多的好处
 
