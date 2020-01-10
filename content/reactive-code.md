@@ -148,7 +148,7 @@ pool.withPoolable(resource ->
 # Processor：数据处理
 
 ### Back Pressure
-如果你订阅的flux会给你实时推送时非常多消息，使用limitRate(100)可以保证flux每次给你推送100条消息，消息消费完备后会再给你发送100条，不会将你打垮。
+如果你订阅的flux会给你实时推送时非常多消息，使用limitRate(100)可以保证flux每次给你推送100条消息，消息消费完备后会再给你发送100条，不会将订阅方打垮。
 
 ```java
            flux.limitRate(100)
