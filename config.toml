@@ -21,6 +21,10 @@ unsafe = true  # enable raw HTML in Markdown
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
 
+[sitemap]
+changefreq = "daily"
+priority = 0.5
+
 [params]
 logo = "/images/rsocket-logo.svg"  # if you have a logo png
 slogan = "Make services communicated easy and fast"
