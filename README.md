@@ -1,12 +1,6 @@
 RSocket by Example
 ==================
 
-RSocket Examples as following:
+基于RSocket常见的设计模式介绍，详细请访问 http://rsocketbyexample.info
 
-* Service-Service Call: 服务间相互调用
-* Traffic Management: 流量管理
-* Integration: 第三方整合
-* Security: 安全
-* Polyglot: 多语言支持
-* Observability: 可观测性
 
