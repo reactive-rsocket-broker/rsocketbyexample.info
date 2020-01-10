@@ -36,6 +36,6 @@ public interface RSocket extends Availability, Closeable {
 | Java Interface支持 | :red_circle:       | :white_check_mark:  | :white_check_mark: |
 | 异步化支持         | :white_check_mark: | :question: 部分支持    | :white_check_mark: |
 | Back Pressure     | :question: 部分支持    | :red_circle:        | :white_check_mark: |
-| 元信息支持         | :red_circle:       | :red_circle:        | :white_check_mark: |
+| 元信息支持         | :red_circle:       | :question: 部分支持        | :white_check_mark: |
 | 自定义序列化        | :red_circle:       | :white_check_mark:  | :white_check_mark: |
 
