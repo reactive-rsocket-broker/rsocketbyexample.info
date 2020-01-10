@@ -1,97 +1,97 @@
 [[servicecall]]
 title = "request/response(RPC通讯)"
 thumb = "/images/communication/rpc.png"
-url = "/request-response/"
+url = "/request-response/index.html"
 
 [[servicecall]]
 title = "request/stream(Pub/Sub订阅)"
 thumb = "/images/communication/stream.png"
-url = "/request-stream/"
+url = "/request-stream/index.html"
 
 [[servicecall]]
 title = "fire-and-forget(无回执数据发送)"
 thumb = "/images/communication/fire_and_forget.png"
-url = "/fire-and-forget/"
+url = "/fire-and-forget/index.html"
 
 [[servicecall]]
 title = "channel(双向流式通讯)"
 thumb = "/images/communication/channel.png"
-url = "/channel"
+url = "/channel/index.html"
 
 [[servicecall]]
 title = "metadata-push(元信息推送)"
 thumb = "/images/communication/metadata_push.png"
-url = "/metadata-push"
+url = "/metadata-push/index.html"
 
 [[servicecall]]
 title = "Peer-to-Peer(角色对等)"
 thumb = "/images/communication/p2p.png"
-url = "/p2p"
+url = "/p2p/index.html"
 
 [[traffic]]
 title = "灰度发布"
 thumb = "/images/traffic/canary.png"
-url = "/canary"
+url = "/canary/index.html"
 
 [[traffic]]
 title = "Load Blance(负载均衡)"
 thumb = "/images/traffic/load_balance.png"
-url = "/load-balance"
+url = "/load-balance/index.html"
 
 [[traffic]]
 title = "Service Mesh"
 thumb = "/images/traffic/istio_envoy.png"
-url = "/service-mesh"
+url = "/service-mesh/index.html"
 
 [[security]]
 title = "TLS"
 thumb = "/images/security/tls.png"
-url = "/tls"
+url = "/tls/index.html"
 
 [[security]]
 title = "JWT Token"
 thumb = "/images/security/jwt.png"
-url = "/jwt"
+url = "/jwt/index.html"
 
 [[security]]
 title = "ACL(访问控制列表)"
 thumb = "/images/security/acl.png"
-url = "/acl"
+url = "/acl/index.html"
 
 [[integration]]
 title = "第三方集成"
 thumb = "/images/integration/open_integration.png"
-url = "/open-integration"
+url = "/open-integration/index.html"
 
 [[integration]]
 title = "Streaming(Kafka)"
 thumb = "/images/integration/streaming.png"
-url = "/streaming"
+url = "/streaming/index.html"
 
 [[integration]]
 title = "Hybrid Cloud Vendors(混合云)"
 thumb = "/images/integration/hybrid_cloud.png"
-url = "/hybrid-cloud-vendors"
+url = "/hybrid-cloud-vendors/index.html"
 
 [[integration]]
 title = "IoT"
 thumb = "/images/integration/iot.png"
-url = "/iot"
+url = "/iot/index.html"
 
 [[integration]]
 title = "FaaS"
 thumb = "/images/integration/faas.png"
-url = "/faas"
+url = "/faas/index.html"
 
 [[integration]]
 title = "RSocket Broker"
 thumb = "/images/integration/alibaba_rsocket_broker.png"
-url = "/rsocket-broker"
+url = "/rsocket-broker/index.html"
 
 [[polyglot]]
 title = "Java"
 thumb = "/images/language/java.png"
-url = "/java"
+url = "/java/index.html"
 
 [[polyglot]]
 title = "JavaScript(Node & Brower)"
@@ -136,14 +136,14 @@ url = "https://github.com/rsocket/rsocket-net"
 [[misc]]
 title = "Chaos"
 thumb = "/images/misc/chaos.png"
-url = "/chaos"
+url = "/chaos/index.html"
 
 [[misc]]
 title = "DDD + Reactive"
 thumb = "/images/misc/ddd.png"
-url = "/ddd-reactive"
+url = "/ddd-reactive/index.html"
 
 [[misc]]
 title = "30 seconds of Reactive code"
 thumb = "/images/misc/reactive_code.png"
-url = "/reactive-code"
+url = "/reactive-code/index.html"
