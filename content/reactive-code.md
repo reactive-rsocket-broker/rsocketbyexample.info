@@ -388,3 +388,8 @@ Mono<String> defer = Mono.defer(this::getNick);
 
 ### Reactive框架之间的互操作
 Reactor Adapter可以让RxJava, Akka, CompletableFuture之间都是相互转换的，即便之前使用RxJava或者CompletableFuture，都是可以和Reactor互操作的，而且Reactor也能转换为RxJava接口。
+
+### 参考
+
+* ReactiveX Operators: http://reactivex.io/documentation/operators.html
+* Project Reactor Operators: https://projectreactor.io/docs/core/release/reference/#which-operator
