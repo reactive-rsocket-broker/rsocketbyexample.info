@@ -7,7 +7,7 @@ title = "Hybrid Cloud Vendors - 混合云集成方案"
 
 混合云集成当然也有对应的解决方案，如VPC + VPN方案(IaaS集成)，HTTPS网关方案(SaaS集成)等。这些方案都相对比较复杂，网络打通、设备支持、域名证书、统一接入和安全防护等等，这些问题我们在"[第三方集成](/open-integration/)"也描述过。
 
-能否有一个更精简、更便宜的解决方案？ 让我们看一下RSocket是如何解决混合云集成方案的，结构如下：
+能否有一个更精简、费用更低的解决方案？ 让我们看一下RSocket是如何解决混合云集成方案的，结构如下：
 
 ![Hybrid Cloud](/images/integration/hybrid_cloud_arch.png)
 

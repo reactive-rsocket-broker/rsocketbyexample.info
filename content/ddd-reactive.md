@@ -7,7 +7,7 @@ title = "DDD + Reactive"
 
 ![DDD Context Map](/images/misc/ddd_context_map.png)
 
-我们都知道Bounded Context之间的通讯是复杂的，只是使用RPC, Pub/Sub模型很难解决通讯中存在的所有问题，而RSocket的丰富通讯模型，完全可以满足Context之间个各种通讯需求，让我们看一下如何解决的。
+我们都知道Bounded Context之间的通讯是复杂的，只是使用RPC, Pub/Sub模型很难解决通讯中存在的所有问题，而RSocket的丰富通讯模型，完全可以满足Context之间个各种通讯需求，让我们看一下RSocket是如何解决的:
 
 * 基于异步消息通讯: 方便解耦，性能高
 * 4个通讯: RPC, Pub/Sub, Channel, Fire-and-Forget各种场景全满足
