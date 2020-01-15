@@ -11,7 +11,7 @@ title = "Hybrid Cloud Vendors - 混合云集成方案"
 
 ![Hybrid Cloud](/images/integration/hybrid_cloud_arch.png)
 
-我们只需在一个云厂商内部部署一套RSocket Broker集群，然后让各个云托管的应用都连接到该Broker集群上，这样集成就完成啦。 这个解决方案由什么优点？
+我们只需在一个云厂商数据中心部署一套RSocket Broker集群，然后让各个云托管的应用都连接到该Broker集群上，这样集成就完成啦。 这个解决方案由什么优点？
 
 * 需求满足啦： RSocket各种通讯模型，绝对满足各个应用的通讯需求。
 * 无需任何网络设置，能连接上RSocket Broker集群即可，当然RSocket Broker对公网有服务端口暴露，办公室的服务器都可以快速接入并被集成
