@@ -3,7 +3,7 @@ title = "30 seconds of RSocket code"
 +++
 
 
-借鉴 30-seconds-of-code 系列，将RSocket使用到的代码场景整理一下，方便大家参考。
+借鉴 30-seconds-of-code 系列，将RSocket使用到的代码场景整理一下，方便大家参考。RSocket的API相对来说比较简单，而且Spring Framework和Spring Boot都有对其封装，所以API已经非常精简。
 
 
 # Composite Metadata
@@ -93,3 +93,7 @@ Request/Stream可以像普通订阅一样
                 });
 ```
 
+# References
+
+* RSocket Java SDK: https://github.com/rsocket/rsocket-java
+* Spring RSocket: https://docs.spring.io/spring/docs/5.2.3.RELEASE/spring-framework-reference/web-reactive.html#rsocket
