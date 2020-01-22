@@ -49,3 +49,47 @@ private static Map<String, Object> parseMetadata(Payload payload) {
         return metadataMap;
     }
 ```
+
+# Request/Response
+
+### Request请求
+
+```
+   // Sending the request
+   rSocket.requestResponse(DefaultPayload.create(name))
+           .map(Payload::getDataUtf8)
+           .subscribe(msg -> {
+               // Handling the response
+               LOG.info("Response: {}", msg);
+           });
+```
+
+### Response响应
+
+```
+public Mono<Payload> requestResponse(Payload payload) {
+        String name = payload.getDataUtf8();
+        if (name == null || name.isEmpty()) {
+            name = "You";
+        }
+        return Mono.just(DefaultPayload.create(String.format("Hello, %s!", name)));
+}
+```
+
+# Request/Stream
+
+### Subscribe a stream
+Request/Stream可以像普通订阅一样
+
+```java
+ rSocket.requestStream(DefaultPayload.create(Unpooled.EMPTY_BUFFER))
+                .doOnComplete(() -> {
+                    LOG.info("Done");
+                })
+                .subscribe(payload -> {
+                    byte[] bytes = new byte[payload.data().readableBytes()];
+                    payload.data().readBytes(bytes);
+                    LOG.info("Received: {}", new BigInteger(bytes).intValue());
+                });
+```
+
