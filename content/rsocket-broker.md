@@ -15,7 +15,7 @@ RSocket Broker典型的架构如下：
 
 RSocket Broker是一个中心化的结构，这个和网关类产品的结构设计差不多，称之为软路由设计。不少同学可能会担心Broker成为网路瓶颈，这里解释一下Broker的设计:
 
-* 全异步架构设计: 非传统的ThreadPool的结构设计，None-Blocking，不会出现阻塞导致的雪崩场景。Broker在解析RSocket协议时，采用零拷贝(Zero-Copy)的设计，只需读取协议头部分字节就完成请求转发
+* 全异步架构设计: 非传统的ThreadPool的结构设计，None-Blocking，不会出现阻塞导致的雪崩场景。Broker在解析RSocket协议时，采用零拷贝([Zero-Copy](https://segmentfault.com/a/1190000007560884))的设计，只需读取协议头部分字节就完成请求转发
 * 服务注册: 由于所有的应用都会连接到Broker进行注册，但是每一个应用只会和broker建立一个长连接，应用的元信息都保存在内存中。关于长连接的数量，不同语言实现的Broker性能不太一样，如基于Java开发的Broker，单机连接总数在30-50万之间，而C++ Broker可以做到单机100万左右。如果有更多连接，目前RSocket Broker通过集群方案进行解决。
 * 开放式Ops API: Broker不参与到具体的计算中，如限流策略、安全防护等，这些都是Broker将数据给其他计算应用，然后将计算的结果返回给Broker，所有Broker会提供非常多的Ops API，这个和路由设备管理都是类似的。
 
