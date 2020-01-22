@@ -147,3 +147,8 @@ url = "/ddd-reactive/index.html"
 title = "30 seconds of Reactive code"
 thumb = "/images/misc/reactive_code.png"
 url = "/reactive-code/index.html"
+
+[[misc]]
+title = "30 seconds of RSocket code"
+thumb = "/images/misc/rsocket_code.png"
+url = "/rsocket-code/index.html"
