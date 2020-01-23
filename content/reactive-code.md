@@ -228,13 +228,23 @@ loginUsers.buffer(Duration.ofMinutes(1))
         }).
 ```
 
-# Exception处理
+# Reactive Exception
 
-### Map处理中的Exception
-在一些map转换的操作中，可能会涉及异常抛出，如new URI()，我们可以调整为handler方式，代码如下：
+Reactive中的异常处理和我们通常理解的try-catch有一定的区别，事实上更方便理解。
+
+### 异常捕获
+在Reactor框架中主要有四个操作符来处理异常doOnError, onErrorMap, onErrorReturn,和onErrorResume
+
+* doOnError: 当异常发生时会执行该操作，但是异常不会被捕获，还是会继续抛给最终消费方。主要的场景如做错误日志记录等。
+* onErrorMap: 将发生的异常转换为另外一个异常，然后抛出转换后的异常。主要场景如将IO异常转换为业务异常，更方便消费方理解或者网络传输。
+* onErrorReturn: 当异常发生时，会返回指定的缺省值，异常会被捕获，不会继续抛出。 主要的场景是用缺省值方式来替换异常抛出。
+* onErrorResume: 当异常发生时，会调用fallback Reactive函数，然后将函数返回的值以flatMap方式返回给调用方。
+
+
+### 异常抛出
+前面讲到如何捕获异常，那么在实际的代码中如何抛出异常？ 传统的throw方式在Reactive中要被抛弃，如以下代码千万不要使用：
 
 ```java
- // 不好的做法
  Mono.just("https://www.taobao.com/").map(text -> {
             try {
                 return new URI(text);
@@ -242,8 +252,13 @@ loginUsers.buffer(Duration.ofMinutes(1))
                 throw new RuntimeException(e);
             }
         })
+```
 
-//好的做法，错误就是错误，返回给Mono，由调用方进行判断
+接下来我们就介绍一下常见异常抛出的方式：
+
+* handle:  handle函数提供一个sink，我们可以直接调用sink.error()，可以处理各种复杂异常。
+
+```java
  Mono.just("https://www.taobao.com/").handle((text, sink) -> {
             try {
                 sink.next(new URI(text));
@@ -252,6 +267,34 @@ loginUsers.buffer(Duration.ofMinutes(1))
             }
         })
 ```
+
+* concatMap + Mono.error: 处理转换中的异常，如String转换为URI对象等。
+
+```java
+Mono.just(userId)
+    .map(repo::findById)
+    .concatMap(user-> {
+        if(!isValid(user)){
+            return Mono.error(new InvalidUserException());
+        }
+        return Mono.just(user);
+    })
+```
+
+当然flatMap也可也做同样的事情，但是这个场景下contactMap更适合，contact是转换操作，而flatMap是做多个流式合并。
+
+* switchOnEmpty: 不少情况下我们希望在空值的情况下抛出异常，如典型的NotFoundException
+
+```
+Mono.just(userId)
+    .flatMap(repo::findById)
+    .switchIfEmpty(Mono.error(new UserNotFoundExeception()))
+
+```
+
+* flatMap + Mono.error: 合并流操作的时候，可以抛出异常。 注意这里是合并多个流。
+
+当然Reactive中是不允许空值的，如果流中包含null值，会直接抛出 NullPointerException，这个你可能要进行处理。 如果你确认值可能会Null，请调用  Mono.justOrEmpty()
 
 # Reactor Context
 
