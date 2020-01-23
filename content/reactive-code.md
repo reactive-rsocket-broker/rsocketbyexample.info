@@ -296,6 +296,30 @@ Mono.just(userId)
 
 当然Reactive中是不允许空值的，如果流中包含null值，会直接抛出 NullPointerException，这个你可能要进行处理。 如果你确认值可能会Null，请调用  Mono.justOrEmpty()
 
+### 空值(empty)处理
+虽然Empty和Exception不太一样，这里还是放在一起方便理解。当我们遇到Reactive中empty时，会有一些方法来方便我们处理：
+
+* defaultIfEmpty: 非常容易理解，如果为空我们使用一个缺省值代替
+* switchIfEmpty: 使用另外一个Mono或者Flux来代替
+* repeatWhenEmpty: 如果为空，则重复执行再次订阅，直到有非空值返回。 如下面代码，如果为空值，则再次发起订阅，那么map, flatMap都会被重新执行3次(最大重复数是5次)，直到第四次返回非空值。
+
+```java
+ AtomicInteger atomicInteger = new AtomicInteger(1);
+ Mono.just(0)
+      .map(num -> {
+          System.out.println("map: " + atomicInteger.get());
+          return num;
+      })
+      .flatMap(text -> {
+          System.out.println("flatMap: ");
+          if (atomicInteger.incrementAndGet() <= 3) {
+              return Mono.empty();
+          }
+          return Mono.just(atomicInteger.get());
+      })
+      .repeatWhenEmpty(Repeat.times(5));
+```
+
 # Reactor Context
 
 ### Mutable Context 可变的Context
