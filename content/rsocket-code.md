@@ -105,6 +105,8 @@ SimpleResponderFactory会创建一个"SocketAcceptor responder()"方法，主要
 SimpleResponderImpl类不像Servlet那样，是Singleton的。 RSocket中Responder Handler通常是每一个连接对应一个Responder对象，类似于Session的机制，所以Responder Handler中的实力变量是针对连接的，
 而其中的requester就是通讯的对方，这样对等通讯完全没有问题。
 
+详细的代码可以参考： https://github.com/linux-china/rsocket-simple-demo
+
 # References
 
 * RSocket Java SDK: https://github.com/rsocket/rsocket-java
