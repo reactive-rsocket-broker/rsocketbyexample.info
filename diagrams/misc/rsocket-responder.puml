@@ -1,0 +1,27 @@
+@startuml
+
+abstract class AbstractRSocket {
+   MonoProcessor<Void> onClose;
+   Mono<Payload> requestResponse(Payload payload);
+   Mono<Void> fireAndForget(Payload payload);
+   Flux<Payload> requestStream(Payload payload);
+   Flux<Payload> requestChannel(Publisher<Payload> payloads)
+   Mono<Void> metadataPush(Payload payload)
+   void dispose();
+}
+class SimpleResponderFactory {
+    List<SimpleResponderImpl> handlers;
+    SocketAcceptor responder();
+    Mono<RSocket> createResponder(ConnectionSetupPayload setupPayload, RSocket requester);
+}
+
+class SimpleResponderImpl extends AbstractRSocket {
+     String id;
+     RSocket requester;
+     Mono<Void> comboOnClose;
+     Mono<Void> onClose();
+}
+
+SimpleResponderFactory -right-> SimpleResponderImpl: Create responder handler
+
+@enduml
