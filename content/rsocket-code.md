@@ -93,6 +93,18 @@ Request/Stream可以像普通订阅一样
                 });
 ```
 
+# RSocket中的设计模式
+
+### RSocket Responder创建模式
+
+RSocket Responder是指接收并处理通讯的对方发过来的请求，这里我们会使用一个工厂模式负责创建对应Responder Handler，结构图如下：
+
+![RSocket Responder](/images/misc/rsocket_responder.png)
+
+SimpleResponderFactory会创建一个"SocketAcceptor responder()"方法，主要是为RSocket便捷操作，同时包含一些验证操作，而核心createResponder()负责创建具体的Responder Handler，如SimpleResponderImpl类。
+SimpleResponderImpl类不像Servlet那样，是Singleton的。 RSocket中Responder Handler通常是每一个连接对应一个Responder对象，类似于Session的机制，所以Responder Handler中的实力变量是针对连接的，
+而其中的requester就是通讯的对方，这样对等通讯完全没有问题。
+
 # References
 
 * RSocket Java SDK: https://github.com/rsocket/rsocket-java
