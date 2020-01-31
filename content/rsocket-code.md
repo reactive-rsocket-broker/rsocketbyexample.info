@@ -107,6 +107,17 @@ SimpleResponderImpl类不像Servlet那样，是Singleton的。 RSocket中Respond
 
 详细的代码可以参考： https://github.com/linux-china/rsocket-simple-demo
 
+# 其他
+
+### 异常日志处理
+RSocket Java SDK中默认的异常处理是调用异常的printStackTrace()方法，如果你要调整异常的记录方式，可以调用errorConsumer进行调整，代码如如下：
+
+```java
+RSocketFactory.receive()
+                .errorConsumer(error -> {
+                    // logging
+                })
+```
 # References
 
 * RSocket Java SDK: https://github.com/rsocket/rsocket-java
