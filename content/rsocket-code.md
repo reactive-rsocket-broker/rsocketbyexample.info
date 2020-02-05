@@ -156,7 +156,8 @@ RSocketFactory.receive()
     });
 ```
 
-详细的代码在 https://github.com/linux-china/rsocket-simple-demo
+详细的代码在 https://github.com/linux-china/rsocket-simple-demo/blob/master/src/main/java/org/mvnsearch/rsocket/demo/RSocketSessionInterceptor.java
+
 
 # 其他
 
