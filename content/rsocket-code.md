@@ -107,6 +107,57 @@ SimpleResponderImpl类不像Servlet那样，是Singleton的。 RSocket中Respond
 
 详细的代码可以参考： https://github.com/linux-china/rsocket-simple-demo
 
+### RSocket Session设计
+Session是指调用方的一个长连接生命存续期间的数据，如HTTP的Session是基于Cookie的机制实现的，所以我们可以非常简单地获取HttpSession对象，在多个请求之间共享一些数据。 那么在RSocket中如何设计Session机制呢？
+Reactor框架中有一个Reactor Context的概念，你可以在 https://projectreactor.io/docs/core/release/reference/#context 这里找到。
+
+* 由于Reactor Context默认是不可变的，当你对context进行put操作会生成新的Context对象，所以我们要进行一些调整，创建一个默认可变的Context，如下代码：
+
+```java
+public class MutableContext implements Context {
+
+	HashMap<Object, Object> holder = new HashMap<>();
+
+  ...
+}
+```
+
+* 接下来我们一个RSocketInterceptor，对RSocket进行拦截处理。 在拦截代码中，我们会调用subscriberContext() 添加context支持，代码如下：
+
+```
+public class RSocketSessionInterceptor implements RSocketInterceptor {
+    @Override
+    public RSocket apply(RSocket source) {
+        return new AbstractRSocket() {
+            private MutableContext mutableContext = new MutableContext();
+
+            @Override
+            public Mono<Payload> requestResponse(Payload payload) {
+                return source.requestResponse(payload).subscriberContext(mutableContext::putAll);
+            }
+        };
+```
+
+* 添加responder plugin，调用RSocketSessionInterceptor的context处理逻辑，代码如下：
+
+```
+RSocketFactory.receive()
+                .addResponderPlugin(new RSocketSessionInterceptor())
+                .acceptor(responderFactory.responder())
+
+```
+
+* 最后调用deferWithContext获取context，并访问session数据，代码如下：
+
+```java
+ public Mono<Payload> requestResponse(Payload payload) {
+    return Mono.deferWithContext((context -> {
+            //use context to get and set session data
+    });
+```
+
+详细的代码在 https://github.com/linux-china/rsocket-simple-demo
+
 # 其他
 
 ### 异常日志处理
