@@ -454,6 +454,16 @@ public Mono<String> getNick() {
 Mono<String> defer = Mono.defer(this::getNick);
 ```
 
+### Schedule Hook
+Reactive框架通常会支持Schedule Hook，也就是在进入调度和推出调度执行的逻辑，你可以进行一些相关的钩子操作。 如果你检查ThreadLocal，这个可能是一个解决方案。
+
+```java
+Function<Runnable, Runnable> decorator = task -> {
+        return () -> {
+        };
+    };
+Schedulers.onScheduleHook("my-hook", decorator);
+```
 ### Reactive框架之间的互操作
 Reactor Adapter可以让RxJava, Akka, CompletableFuture之间都是相互转换的，即便之前使用RxJava或者CompletableFuture，都是可以和Reactor互操作的，而且Reactor也能转换为RxJava接口。
 
