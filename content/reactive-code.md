@@ -454,6 +454,10 @@ public Mono<String> getNick() {
 Mono<String> defer = Mono.defer(this::getNick);
 ```
 
+### Jackson的Reactive支持
+
+Jackson是非常流行的Json开发包，如果要整合Reactive支持，请考虑使用Spring Framework的 Jackson2JsonDecoder 和 Jackson2JsonEncoder 类。
+
 ### Schedule Hook
 Reactive框架通常会支持Schedule Hook，也就是在进入调度和推出调度执行的逻辑，你可以进行一些相关的钩子操作。 如果你检查ThreadLocal，这个可能是一个解决方案。
 
