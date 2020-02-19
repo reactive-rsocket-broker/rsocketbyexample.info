@@ -52,6 +52,8 @@ private static Map<String, Object> parseMetadata(Payload payload) {
 
 # Request/Response
 
+Request/Response是典型的RPC调用，发送请求然后等待返回。在RSocket中，这个等待是异步的，而不是同步的，不会浪费你宝贵的线程资源。
+
 ### Request请求
 
 ```
@@ -74,6 +76,20 @@ public Mono<Payload> requestResponse(Payload payload) {
         }
         return Mono.just(DefaultPayload.create(String.format("Hello, %s!", name)));
 }
+```
+
+# Fire-and-Forget
+
+Fire-and-Forget的使用场景也非常多，如会员注册过程中，发送短信验证码；注册后发送一封欢迎邮件等等，如果你使用堵塞的方式，用户要等待非常时间，体验非常不好，现在只需要Fire-and-Forget后，马上就可以返回。
+
+```
+   // Sending the request
+   rSocket.requestResponse(DefaultPayload.create(name))
+           .map(Payload::getDataUtf8)
+           .subscribe(msg -> {
+               // Handling the response
+               LOG.info("Response: {}", msg);
+           });
 ```
 
 # Request/Stream
