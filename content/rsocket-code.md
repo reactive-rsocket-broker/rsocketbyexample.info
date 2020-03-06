@@ -186,6 +186,28 @@ RSocketFactory.receive()
                     // logging
                 })
 ```
+
+### RSocket连接层拦截
+如果想做一些连接层的拦截，也就是字节流发送到网络之前，你可以使用DuplexConnectionInterceptor。在这一层你可以进行一些网络扩展，如流控等，代码如下：
+
+```java
+public class TokenBucketInterceptor implements DuplexConnectionInterceptor {
+    @Override
+    public DuplexConnection apply(Type type, DuplexConnection source) {
+        if (type.equals(Type.CLIENT)) {
+            return new DuplexConnectionProxy(source) {
+                @Override
+                public Mono<Void> send(Publisher<ByteBuf> frames) {
+                    //token bucket control
+                    return super.send(frames);
+
+                }
+            };
+        }
+        return source;
+    }
+}
+```
 # References
 
 * RSocket Java SDK: https://github.com/rsocket/rsocket-java
