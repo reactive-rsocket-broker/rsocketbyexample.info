@@ -9,3 +9,9 @@ title = "Canary Deployment - 灰度发布"
 
 ![Canary Diagram](/images/traffic/canary.png)
 
+具体的实现原理也比较简单。在Broker的设计中，通常都会包含一个路由表，路由表中保存着服务名称和RSocket连接之间的映射关系，我们可以只需调整路由表就可以实现上述功能：
+
+* 设置权重： 只需调整映射池中RSocket连接实例出现的次数，就可以达到调整权重的目的
+* 服务实例暂停：只需要将服务实例对应的RSocket连接从池中去除就可以
+* 服务定点支持：如果你想将服务路由到指定的服务实例上，只需要通过filter调整一下路由表中的endpoint(接入点)，指定服务方的IP或者ID就可以。
+
