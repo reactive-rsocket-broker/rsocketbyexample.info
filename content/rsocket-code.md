@@ -84,7 +84,7 @@ Fire-and-Forget的使用场景也非常多，如会员注册过程中，发送�
 
 ```
    // Sending the request
-   rSocket.requestResponse(DefaultPayload.create(name))
+   rSocket.fireAndForget(DefaultPayload.create(name))
            .map(Payload::getDataUtf8)
            .subscribe(msg -> {
                // Handling the response
