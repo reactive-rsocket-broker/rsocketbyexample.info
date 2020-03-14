@@ -200,7 +200,6 @@ public class TokenBucketInterceptor implements DuplexConnectionInterceptor {
                 public Mono<Void> send(Publisher<ByteBuf> frames) {
                     //token bucket control
                     return super.send(frames);
-
                 }
             };
         }
@@ -208,6 +207,7 @@ public class TokenBucketInterceptor implements DuplexConnectionInterceptor {
     }
 }
 ```
+
 # References
 
 * RSocket Java SDK: https://github.com/rsocket/rsocket-java
