@@ -187,6 +187,16 @@ RSocketFactory.receive()
                 })
 ```
 
+### Metrics支持
+如果你要监测RSocket请求的响应时间等Metrics参数，也非常简单，只要设置一下name，然后调用metrics()方法即可，当然你需要将MicroMeter依赖添加到项目中。
+如监控RSocket的requestResponse的响应时间，代码如下：
+
+```
+return rsocket.requestResponse(payload)
+                .name("com.foobar.UserService.findUserById")
+                .metrics()
+```
+
 ### RSocket连接层拦截
 如果想做一些连接层的拦截，也就是字节流发送到网络之前，你可以使用DuplexConnectionInterceptor。在这一层你可以进行一些网络扩展，如流控等，代码如下：
 
