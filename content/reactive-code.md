@@ -437,6 +437,16 @@ Map<String, String> tags = Scannable.from(nick).tags().collect(Collectors.toMap(
 ```
 当然cache还提供ttl支持，如果你想设置ttl，也没有问题，这样你可以将远程或者数据库返回的调用结果进行缓存。
 
+### Metrics支持
+当你使用Reactor时，如果你要做一些Metrics，也非常简单，只要给对应的Mono或者Flux设置一个name，然后调用一下metrics()方法就可以啦。
+如你要监测RSocket的requestResponse的响应时间，代码如下：
+
+```
+return rsocket.requestResponse(payload)
+                .name("com.foobar.UserService.findUserById")
+                .metrics()
+```
+
 ### 完全Lazy
 如果调用一个函数，该函数的返回值是Mono，但是在函数调用的过程中，还是会执行函数中的同步代码，如以下代码，System.out.println还是会被执行的。
 
@@ -468,6 +478,7 @@ Function<Runnable, Runnable> decorator = task -> {
     };
 Schedulers.onScheduleHook("my-hook", decorator);
 ```
+
 ### Reactive框架之间的互操作
 Reactor Adapter可以让RxJava, Akka, CompletableFuture之间都是相互转换的，即便之前使用RxJava或者CompletableFuture，都是可以和Reactor互操作的，而且Reactor也能转换为RxJava接口。
 
