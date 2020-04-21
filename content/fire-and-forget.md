@@ -26,3 +26,6 @@ public interface RSocket extends Availability, Closeable {
 
 ```
 
+最后我们建议你可以参考一下Spring Blog上的 [Getting Started With RSocket: Spring Boot Fire-And-Forget](https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget) 文章。
+
+
