@@ -15,3 +15,9 @@ title = "DDD + Reactive"
 * 对等通讯: Context之间是对等的，相互调用没有问题
 
 DDD + Reactive + RSocket的结合，就很好地解决了Context(微服务)之间如何相互通讯的问题，将指导思想能够通过具体的技术进行落地，这个也是DDD倡导的从问题域到实现域一整套解决思路。
+
+# References
+
+* Reactive DDD—When Concurrent Waxes Fluent - Vaughn Vernon: https://www.youtube.com/watch?v=qtIsPSVwErQ
+* Modeling Uncertainty with Reactive DDD: https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/
+* Reactive in practice, Unit 1: Event storming the stock trader domain: https://developer.ibm.com/technologies/java/tutorials/reactive-in-practice-1/
