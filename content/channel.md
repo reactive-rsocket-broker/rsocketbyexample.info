@@ -58,3 +58,4 @@ public interface ResponderRSocket extends RSocket {
 
 ```
 
+最后我们建议你可以参考一下Spring Blog上的 [Getting Started With RSocket: Spring Boot Channels](https://spring.io/blog/2020/04/06/getting-started-with-rsocket-spring-boot-channels) 文章。
