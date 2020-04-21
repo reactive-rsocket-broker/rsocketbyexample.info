@@ -8,6 +8,7 @@ title = "Chaos - 混沌测试"
 * Timeout: 这个不用说啦，Reactive天生就支持这一特性，一个delaySequence API就可以搞定
 * 网络不可用: 我们只需要调用Mono.error() 或者 Flux.error() 就可以马上模拟网络不可用的异常场景
 * RSocket Interceptor和Filter: RSocket Java SDK中提供了非常好的Interceptor插件机制，只需一个Interceptor就可以模拟网络、服务调用、超时等各种情况。 在RSocket Broker的设计中，通过Filter机制，也能模拟各种场景，如权限不足等等。你只需要创建ChaosInterceptor和ChaosFilter类进行扩展就可以啦。
+* Reactive的错误和异常操作方法:  Reactive提供了非常多关于错误处理的方法，如错误消费、错误重试、错误转换等等，这些多可以方便你进行相关的错误处理。
 
 [Toxiproxy](https://github.com/Shopify/toxiproxy)提供了不少模拟Chaos的测试，如latency、down、bandwidth、slow_close、timeout等等，有兴趣的同学可以参考一下。
 
