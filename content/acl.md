@@ -10,6 +10,7 @@ title = "ACL - 访问控制列表"
 * Service Account: 这个概念来自Kubernetes的设计，同一个service account下的应用可以相互访问
 * Role: 角色列表，如admin, ops等，可用于基于角色的权限控制，在Spring Security中可使用hasAnyRole(role1,role2)验证
 * Authority List: 权限列表,可用于基于具体权限的控制，如能否更新用户信息、能否访问用户信用卡信息等，在Spring Security中可使用hasAnyAuthority(authority1,authority2)验证
+* 验证方式: RSocket Broker采用的是基于RSA算法的JWT验证，也就是私钥控制JWT Token生成，而公钥负责JWT Token验证，可以分发给应用使用，不需要安全验证中心和远程API验证，且无秘钥泄露风险。
 
 ![ACL Diagram](/images/security/acl.png)
 
