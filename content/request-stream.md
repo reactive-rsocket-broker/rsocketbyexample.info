@@ -40,6 +40,8 @@ public interface RSocket extends Availability, Closeable {
 
 总体来说 Back Pressure =  Request N + Push
 
+最后我们建议你可以参考一下Spring Blog上的 [Getting Started With RSocket: Spring Boot Request-Stream](https://spring.io/blog/2020/03/23/getting-started-with-rsocket-spring-boot-request-stream) 文章。
+
 
 ### Push, Pull 和 Back Pressure 模型对比
 
