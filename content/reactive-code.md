@@ -484,6 +484,7 @@ Reactor Adapter可以让RxJava, Akka, CompletableFuture之间都是相互转换�
 
 ### 参考
 
+* Reactive in practice: A complete guide to event-driven systems development in Java: https://developer.ibm.com/series/reactive-in-practice/
 * ReactiveX Operators: http://reactivex.io/documentation/operators.html
 * RxJava Alphabetical List of Observable Operators: https://github.com/ReactiveX/RxJava/wiki/Alphabetical-List-of-Observable-Operators
 * RxJava 2.x & 3.x extra sources, operators and components: https://github.com/akarnokd/RxJavaExtensions
