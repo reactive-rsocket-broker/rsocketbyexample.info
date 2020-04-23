@@ -228,7 +228,7 @@ loginUsers.buffer(Duration.ofMinutes(1))
         }).
 ```
 
-### transformDeferred
+### transformDeferred/compose
 有些时候，我们希望在订阅Publisher时根据外部的一些状态信息进行Publisher的转换，可以是原有Publisher对象，也可以是新的Publisher对象。
 如做Circuit Breaker控制，如果不能满足流控的条件，我们可能马上返回一个错误的Publisher。这个时候你可以时使用transformDeferred()，流程如下：
 
