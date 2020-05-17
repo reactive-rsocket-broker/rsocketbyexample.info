@@ -17,3 +17,7 @@ title = "ACL - 访问控制列表"
 以上这些元信息，可以更好地帮助进行细粒度的权限控制，配合RSocket的Filter机制，你可以进行各种ACL Filter扩展。 目前Spring Security已经支持RSocket，你只需要少量的配置就可以完成RSocket和Spring Security集成，实现访问权限控制。
 
 **友情提示**: 关于JWT Token中是否要包含permission claims, 有不同的观点，这里我们不进行讨论。 JWT token失效的问题，这个建议使用一个黑名单列表，这个在RSocket设计中非常容易做到。
+
+# References
+
+* Secure Communication with Token-based RSocket: https://dzone.com/articles/secure-communication-with-token-based-rsocket
