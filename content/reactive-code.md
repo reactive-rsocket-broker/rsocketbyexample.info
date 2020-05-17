@@ -89,7 +89,7 @@ Mono.just(1).timeout(Duration.ofSeconds(1000))
 
 # 钩子场景
 
-### 清空Cache
+### 清空操作
 如更新用户信息后清空Cache或者更新值，都可以用doOnNext()进行相应的更新，可以实现更多自定义逻辑。
 
 ```java
@@ -406,6 +406,21 @@ public class MutableContext implements Context {
 ```
 
 # 其他
+
+### 缓存Cache
+在某些场景，你需要对结果进行缓存，从而提升系统的性能。 在Reactive场景下，你只需要结合defer()和cache()操作就可以。
+
+* defer表示推迟订阅到下游(downstream)数据提供者，在cache场景中表示数据源提供者。
+* cache()表示转换为hot source，将数据流缓存，然后将最后一步的信号也缓存下来，这样在下一个订阅者发起订阅时，将这些数据流和型号进行重放。 你可以设置对应的过期时间
+
+代码如下：
+
+```
+Mono<String> user = Mono.defer(() -> {
+            return Mono.just("user1");
+        }).cache(Duration.ofSeconds(2));
+
+```
 
 ### 空值处理
 如果API返回为Mono，如 Mono<User>，则表示可能会出现空值的情况，也就是返回 Mono.empty()，这个时候，如果你想使用缺省值(default value)，可以调用then或者defaultIfEmpty(Object)
