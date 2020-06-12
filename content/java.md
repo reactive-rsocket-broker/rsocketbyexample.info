@@ -17,3 +17,4 @@ title = "RSocket Java SDK"
 * Spring Integration RSocket: https://docs.spring.io/spring-integration/docs/current/reference/html/rsocket.html#rsocket
 * Alibaba RSocket Broker: https://github.com/alibaba/alibaba-rsocket-broker
 * vlingo wire: https://github.com/vlingo/vlingo-wire
+* RSocket Routing Broker: https://github.com/rsocket-routing/rsocket-routing-broker
