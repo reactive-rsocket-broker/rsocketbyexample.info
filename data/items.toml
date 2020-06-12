@@ -94,9 +94,9 @@ thumb = "/images/language/java.png"
 url = "/java/index.html"
 
 [[polyglot]]
-title = "JavaScript(Node & Brower)"
+title = "JavaScript(Node&Brower&Deno)"
 thumb = "/images/language/javascript.png"
-url = "https://github.com/rsocket/rsocket-js"
+url = "/javascript/index.html"
 
 [[polyglot]]
 title = "Koltin(Android)"
