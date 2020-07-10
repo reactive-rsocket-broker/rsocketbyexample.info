@@ -5,6 +5,19 @@ title = "30 seconds of Reactive code"
 
 借鉴 30-seconds-of-code 系列，将Reactive使用到的代码场景整理一下，方便大家参考。
 
+这里主要是讲灵活使用Reactive的各种操作方法达到我们最终的要求，所以将各种操作方法进行一个归类，更多可以参考 http://reactivex.io/documentation/operators.html
+
+* 创建(Creating): 创建Observable对象，如根据value创建，从array/list等创建，从Promise/Future创建，从range和interval创建，从error创建等。
+* 转换(Transforming): 将Observable中的对象进行转换，如从String转换为数字等，涉及到诸如map、flatmap、buffer、window和scan等操作
+* 过滤(Filtering): 挑选Observable中符合条件的对象，如filter, first, last, take等操作
+* 组合(Combining): 和其他一个或者多个Observable对象组合成为一个新的Observable对象，如and、then、join、merge、zip等
+* 错误处理(Error Handling): 处理整个操作链中的触发的异常，如catch、retry等操作。
+* 条件判断(Conditional): 对整个Observable进行条件判断，如是否包含某一item、是否为空等，包括all、contains、skipUntil等操作
+* 数学和聚合(Mathematical and Aggregate): 如sum、count、min、max和reduce等
+* 背压(Backpressure): 控制Observable生成对象的速度从而包含数据消费者不会过载，主要通过limit方法限制生成速度，同时包含各种背压通知，如drop等通知
+* 连接性(Connectable): 更精细地控制Observable订阅行为，如手动发送数据的connect方法等，如connect, replay, cache等方法
+* 观察者模式工具类方法(Observable Utility): 针对Observable的一些工具方法，如delay、timeout、timestamp等，以及各种事件的通知方法，如doOnNext, doOnError和doOnCompleted等
+* 转化(Convert): 将Observable转化为另外一个对象，如Array, List, Map等
 
 # Reactive基础
 
