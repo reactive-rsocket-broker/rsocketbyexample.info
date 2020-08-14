@@ -19,3 +19,4 @@ title = "RSocket Java SDK"
 * Alibaba RSocket Broker: https://github.com/alibaba/alibaba-rsocket-broker
 * vlingo wire: https://github.com/vlingo/vlingo-wire
 * RSocket Routing Broker: https://github.com/rsocket-routing/rsocket-routing-broker
+* Spring Retrosocket: Feign-like or Retrofit-like experience for declarative RSocket-based clients https://github.com/spring-projects-experimental/spring-retrosocket
