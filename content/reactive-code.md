@@ -99,6 +99,16 @@ Mono.just(1).timeout(Duration.ofSeconds(1000))
 ```
 如在做Node调用WebAssembly函数时候，你就可以使用这个方法，这样可以保证不会出现长时间等待空耗时间的问题。
 
+#### 业务操作重试设置
+在一些情况下，如发生异常等，你需要进行重试操作，你可以使用Retry进对应的设置。 Retry在i.projectreactor.addons:reactor-extra下，样例代码如下：
+
+```java
+   retry = Retry.anyOf(IOException.class)
+                 .randomBackoff(Duration.ofMillis(100), Duration.ofSeconds(60))
+                 .withApplicationContext(appContext)
+                 .doOnRetry(context -> context.applicationContext().rollback());
+   flux.retryWhen(retry);
+```
 
 # 钩子场景
 
