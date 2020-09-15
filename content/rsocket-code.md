@@ -183,7 +183,7 @@ RSocketFactory.receive()
 DuplexConnection提供了remoteAddress()方法，你只需要通过鉴权时的requester对象的connection字段就可以就可以拿到连接方的IP地址。
 下述代码中的FieldUtils类来自Apache commons-lang3。 样例如下：
 
-```
+```java
 public Mono<RSocket> createResponder(ConnectionSetupPayload setupPayload, RSocket requester) {
         //CompositeMetadata compositeMetadata = new CompositeMetadata(setupPayload.metadata(), false);
         //security authentication
@@ -196,6 +196,19 @@ public Mono<RSocket> createResponder(ConnectionSetupPayload setupPayload, RSocke
         SimpleResponderImpl handler = new SimpleResponderImpl(setupPayload, requester);
         return Mono.just(handler);
     }
+```
+
+当然你也可以通过RSocket的plugin机制，来验证连接方的远程IP地址，如下：
+
+```java
+   RSocketServer.create()
+                .acceptor(responderFactory.responder())
+                .interceptors(registry -> {
+                    registry.forConnection((type, duplexConnection) -> {
+                        //check remote address
+                        return duplexConnection;
+                    });
+                })
 ```
 
 ### 异常日志处理
