@@ -177,6 +177,27 @@ RSocketFactory.receive()
 
 # 其他
 
+### 获取RSocket Requester的IP地址
+
+在某些场景下，我们想在RSocket鉴权的时候，验证对方的IP地址，如是否在IP白名单内，从而保证一定的安全性。 在RSocket Java 1.1.0版本，
+DuplexConnection提供了remoteAddress()方法，你只需要通过鉴权时的requester对象的connection字段就可以就可以拿到连接方的IP地址。
+下述代码中的FieldUtils类来自Apache commons-lang3。 样例如下：
+
+```
+public Mono<RSocket> createResponder(ConnectionSetupPayload setupPayload, RSocket requester) {
+        //CompositeMetadata compositeMetadata = new CompositeMetadata(setupPayload.metadata(), false);
+        //security authentication
+        try {
+            DuplexConnection connection = (DuplexConnection) FieldUtils.readField(requester, "connection", true);
+            InetSocketAddress remoteAddress = (InetSocketAddress) connection.remoteAddress();
+        } catch (Exception ignore) {
+
+        }
+        SimpleResponderImpl handler = new SimpleResponderImpl(setupPayload, requester);
+        return Mono.just(handler);
+    }
+```
+
 ### 异常日志处理
 RSocket Java SDK中默认的异常处理是调用异常的printStackTrace()方法，如果你要调整异常的记录方式，可以调用errorConsumer进行调整，代码如如下：
 
