@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+
+      {{ range (where .Site.RegularPages.ByTitle "Section" "blog" ) }}
+      <div>
+      <h3 align="left">{{.Params.categories}}</h3>
+      <h1 align="left"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <p>{{ .Summary }}</p>
+        <p>{{.Params.postDate}}</p>
+      </div>
+      {{ end }}
+
+{{ end }}
