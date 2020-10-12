@@ -142,11 +142,16 @@ type GitInfo struct {
 type PageParams struct {
 	tags       []string
 	categories []string
+	justify    bool
 }
 
 //customized site params
 type SiteParams struct {
-	author string
+	logo    string
+	slogan  string
+	license string
+	syntax  Syntax
+	nav     Nav
 }
 
 // customized data structs
@@ -166,4 +171,16 @@ type Item struct {
 	title string
 	thumb string
 	url   string
+}
+
+type Syntax struct {
+	use       string
+	theme     string
+	darkTheme string
+	webFronts bool
+}
+
+type Nav struct {
+	showCategories bool
+	showTags       bool
 }
