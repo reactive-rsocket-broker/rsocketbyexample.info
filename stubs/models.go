@@ -150,8 +150,10 @@ type SiteParams struct {
 	logo    string
 	slogan  string
 	license string
+	style   string
 	syntax  Syntax
 	nav     Nav
+	math    Math
 }
 
 // customized data structs
@@ -177,10 +179,15 @@ type Syntax struct {
 	use       string
 	theme     string
 	darkTheme string
-	webFronts bool
+	webFonts  bool
 }
 
 type Nav struct {
 	showCategories bool
 	showTags       bool
+}
+
+type Math struct {
+	enable bool
+	use    string
 }
