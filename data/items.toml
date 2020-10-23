@@ -101,7 +101,7 @@ url = "/javascript/index.html"
 [[polyglot]]
 title = "Koltin(Android)"
 thumb = "/images/language/kotlin.png"
-url = "https://github.com/rsocket/rsocket-kotlin"
+url = "/kotlin/index.html"
 
 [[polyglot]]
 title = "Golang"
