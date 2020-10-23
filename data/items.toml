@@ -99,7 +99,7 @@ thumb = "/images/language/javascript.png"
 url = "/javascript/index.html"
 
 [[polyglot]]
-title = "Koltin(Android)"
+title = "Koltin(Multi Platform)"
 thumb = "/images/language/kotlin.png"
 url = "/kotlin/index.html"
 
