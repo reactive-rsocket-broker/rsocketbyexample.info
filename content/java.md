@@ -8,6 +8,8 @@ title = "RSocket Java SDK"
 如果你想马上尝试一下RSocket，可以参考 [Getting Started With RSocket: Spring Boot Server](https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server)
 
 这里给出一些常见样例：
+
+* Easy RPC with RSocket: https://spring.io/blog/2021/01/18/ymnnalft-easy-rpc-with-rsocket
 * RSocket Java Examples: https://github.com/gregwhitaker?utf8=%E2%9C%93&tab=repositories&q=rsocket+example&type=&language=
 * Spring cloud function with RSocket: https://github.com/linux-china/spring-cloud-function-demo
 * Spring Boot RSocket Demo with RPC style: https://github.com/linux-china/spring-boot-rsocket-demo
