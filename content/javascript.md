@@ -17,3 +17,5 @@ RSocket JS对应的SDK参考如下：
 * RSocket Deno: https://deno.land/x/rsocket
 
 *友情提示:*  如果也想尝试Web UI层的Reactive技术，这里我们推荐使用[Svelte](https://svelte.dev/)，是一款完全Reactive的前端框架，我们提供了对应多的Demo，你可以在这里 https://github.com/linux-china/svelte-rsocket-demo 查阅。
+
+RSocket同时提供Chrome Dev Tools，方便你在Chrome中对RSocket进行调试，详情请参考：https://github.com/rsocket/rsocket-chrome-devtools
