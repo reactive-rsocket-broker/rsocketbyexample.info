@@ -10,6 +10,7 @@ title = "负载均衡"
 * 健康度检查: 当服务进行注册后，还要对所有接入的应用进行健康度检查，从而确保服务的可用性。这里也不简单，如监控度状态暴露、如何定期检查、时延等等。
 * 负载均衡策略: 目前有中心化和点对点两种策略。中心化的如Nginx做HTTP负载均衡、F5设备等，而RPC的调用通常会采用点对点的方式，这样可以避免中心化瓶颈，但是要维护复杂的Load Balance SDK，如路由策略、失败监测和重试等等。
 
+### RSocket Broker
 RSocket在协议层设计就考虑到这个问题啦，通过Broker的介入，可以非常简单地解决负载均衡的问题，结构如下：
 
 ![Load Balance Diagram](/images/traffic/load_balance.png)
@@ -25,3 +26,10 @@ RSocket在协议层设计就考虑到这个问题啦，通过Broker的介入，�
 * 负载均衡算法简单啦: 应用都和Broker建立了长连接，所以不用担心如何连接到服务提供方的问题；而且包含了特定的元信息(RSocket Composite Metadata)，也方便路由算法的设计
 
 总的来说，通过RSocket Broker的介入，之前非常复杂的负载均衡设计，如服务注册、健康度检查、到服务端的连接维护等这些问题，在RSocket中都不需要啦，结构也简单了很多。
+
+### RSocket Service Registry
+此外，RSocket还可以复用当前服务注册发现机制实现负载均衡，建构图如下：
+
+![rsocket-service-registry](../static/images/traffic/rsocket-service-registry.png)
+
+更多的详细信息，请参考： https://github.com/alibaba-rsocket-broker/rsocket-load-balance
