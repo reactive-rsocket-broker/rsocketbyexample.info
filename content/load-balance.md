@@ -30,6 +30,6 @@ RSocket在协议层设计就考虑到这个问题啦，通过Broker的介入，�
 ### RSocket Service Registry
 此外，RSocket还可以复用当前服务注册发现机制实现负载均衡，建构图如下：
 
-![rsocket-service-registry](../static/images/traffic/rsocket-service-registry.png)
+![rsocket-service-registry](/images/traffic/rsocket-service-registry.png)
 
 更多的详细信息，请参考： https://github.com/alibaba-rsocket-broker/rsocket-load-balance
