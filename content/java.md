@@ -10,6 +10,7 @@ title = "RSocket Java SDK"
 这里给出一些常见样例：
 
 * Easy RPC with RSocket: https://spring.io/blog/2021/01/18/ymnnalft-easy-rpc-with-rsocket
+* Spring Boot with Kotlin and RSocket: https://spring.io/guides/tutorials/spring-webflux-kotlin-rsocket/
 * RSocket Load Balancing – Client Side: https://www.vinsguru.com/rsocket-load-balancing-client-side/
 * RSocket Java Examples: https://github.com/gregwhitaker?utf8=%E2%9C%93&tab=repositories&q=rsocket+example&type=&language=
 * Spring cloud function with RSocket: https://github.com/linux-china/spring-cloud-function-demo
