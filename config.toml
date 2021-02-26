@@ -10,6 +10,7 @@ languageCode = "zh-cn"
 hasCJKLanguage = true
 
 enableRobotsTXT = true
+canonifyurls = true
 
 [markup.highlight]
 codeFences = true
