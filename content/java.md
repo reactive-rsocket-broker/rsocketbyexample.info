@@ -9,6 +9,7 @@ title = "RSocket Java SDK"
 
 这里给出一些常见样例：
 
+* Spring Tips: @Controllers and RSocket: https://spring.io/blog/2021/12/01/spring-tips-controllers-and-rsocket
 * Easy RPC with RSocket: https://spring.io/blog/2021/01/18/ymnnalft-easy-rpc-with-rsocket
 * Spring Boot with Kotlin and RSocket: https://spring.io/guides/tutorials/spring-webflux-kotlin-rsocket/
 * RSocket Load Balancing – Client Side: https://www.vinsguru.com/rsocket-load-balancing-client-side/
