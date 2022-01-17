@@ -7,6 +7,56 @@ title = "RSocket Java SDK"
 
 如果你想马上尝试一下RSocket，可以参考 [Getting Started With RSocket: Spring Boot Server](https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server)
 
+当然最快捷的方式尝试RSocket Java就是使用JBang，样例项目地址为： https://github.com/linux-china/jbang-rsocket
+
+```java
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//JAVA 8
+//DEPS org.slf4j:slf4j-simple:1.7.33
+//DEPS io.rsocket:rsocket-core:1.1.1
+//DEPS io.rsocket:rsocket-transport-netty:1.1.1
+
+import io.rsocket.Payload;
+import io.rsocket.RSocket;
+import io.rsocket.SocketAcceptor;
+import io.rsocket.core.RSocketServer;
+import io.rsocket.transport.netty.server.TcpServerTransport;
+import io.rsocket.util.DefaultPayload;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Hooks;
+import reactor.core.publisher.Mono;
+
+public class ServerExample {
+    public static void main(String[] args) {
+        Hooks.onErrorDropped(e -> {});
+        RSocket handler = new RSocket() {
+            @Override
+            public Mono<Payload> requestResponse(Payload payload) {
+                System.out.println("RequestResponse: " + payload.getDataUtf8());
+                return Mono.just(payload);
+            }
+
+            @Override
+            public Flux<Payload> requestStream(Payload payload) {
+                System.out.println("RequestStream: " + payload.getDataUtf8());
+                return Flux.just("First", "Second").map(DefaultPayload::create);
+            }
+
+            @Override
+            public Mono<Void> fireAndForget(Payload payload) {
+                System.out.println("FireAndForget: " + payload.getDataUtf8());
+                return Mono.empty();
+            }
+        };
+        RSocketServer.create(SocketAcceptor.with(handler))
+                .bindNow(TcpServerTransport.create("localhost", 7000))
+                .onClose()
+                .doOnSubscribe(subscription -> System.out.println("RSocket Server listen on tcp://localhost:7000"))
+                .block();
+    }
+}
+```
+
 这里给出一些常见样例：
 
 * Spring Tips: @Controllers and RSocket: https://spring.io/blog/2021/12/01/spring-tips-controllers-and-rsocket
