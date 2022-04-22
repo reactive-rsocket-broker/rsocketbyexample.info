@@ -12,9 +12,9 @@ title = "RSocket Java SDK"
 ```java
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //JAVA 8
-//DEPS org.slf4j:slf4j-simple:1.7.33
-//DEPS io.rsocket:rsocket-core:1.1.1
-//DEPS io.rsocket:rsocket-transport-netty:1.1.1
+//DEPS org.slf4j:slf4j-simple:1.7.36
+//DEPS io.rsocket:rsocket-core:1.1.2
+//DEPS io.rsocket:rsocket-transport-netty:1.1.2
 
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
@@ -62,6 +62,7 @@ public class ServerExample {
 * Spring Tips: @Controllers and RSocket: https://spring.io/blog/2021/12/01/spring-tips-controllers-and-rsocket
 * Easy RPC with RSocket: https://spring.io/blog/2021/01/18/ymnnalft-easy-rpc-with-rsocket
 * Spring Boot with Kotlin and RSocket: https://spring.io/guides/tutorials/spring-webflux-kotlin-rsocket/
+* GraphQL over RSocket: https://docs.spring.io/spring-graphql/docs/1.0.0-RC1/reference/html/#server-rsocket
 * RSocket Load Balancing – Client Side: https://www.vinsguru.com/rsocket-load-balancing-client-side/
 * RSocket Java Examples: https://github.com/gregwhitaker?utf8=%E2%9C%93&tab=repositories&q=rsocket+example&type=&language=
 * Spring cloud function with RSocket: https://github.com/linux-china/spring-cloud-function-demo
