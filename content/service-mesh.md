@@ -36,4 +36,4 @@ RSocket Service Mesh的架构会带来什么样的变化？
 * 安全模型简单且统一: 请参考RSocket的安全设计，目前主要是TLS + JWT保障
 * 其他: 如服务注册、RSocket协议对比HTTP的性能10倍提升、无端口监听保证等等
 
-
+关于Istio, eBPF和RSocket Broker的综合对比，可以参考 [《Istio, eBPF and RSocket Broker: A deep dive into service mesh》](https://medium.com/geekculture/istio-ebpf-and-rsocket-broker-a-deep-dive-into-service-mesh-7ec4871d50bb)。
