@@ -34,16 +34,16 @@ RSocket Ruby，基于Sinatra思想设计，支持RSocket基本特性，目前考
 ###  8 CSS
 这个不会要求RSocket做些什么吧？  如果大家觉得Svelte组件模型对CSS支持不错，Svelte是和RSocket的RxJS适配是完全没有问题的。
 
-###  9 TypeScript ⭐⭐
-目前的TS支持主要是通过RSocket Deno来实现的，如果你有关注Deno + TS，那就不用担心啦，已经支持。 后续投入更多的精力在Deno的支持上。
+###  9 TypeScript ⭐⭐⭐
+最新的RSocket-JS 1.0.x版本全面基于TypeScript变形，详细请参考 https://github.com/rsocket/rsocket-js
 
 ### 10 C 🏗
 之前打算基于 [Nano Msg](https://nng.nanomsg.org/) 开发对应的实现，目前打算基于Rust FFI来完成C的对接，这个在开发中，可行性还比较高。
 
-### 11 Swift  🏗
-RSocket Swift正在开发中，主要基于Swift NIO和Combine Framework，很快和大家见面。
+### 11 Swift  ⭐⭐
+目前基于ReactiveSwift 开发，详情请参考 https://github.com/rsocket/rsocket-swift
 
-### 12 Objective-C 🏗
+### 12 Objective-C ⭐⭐
 
 目前的方案是 Importing Swift into Objective-C，也就是 Objective-C 调用Swift SDK相关的代码，这个会在Swift SDK开发完成后进行。
 
@@ -53,8 +53,8 @@ RSocket Swift正在开发中，主要基于Swift NIO和Combine Framework，很�
 ### 14 Scala  ⭐⭐⭐
 调用RSocket Java即可
 
-### 15 Go ⭐⭐
-RSocket很早就增加对Golang的支持， 请访问 rsocket-go
+### 15 Go ⭐⭐⭐
+RSocket很早就增加对Golang的支持， 请访问[rsocket-go](https://github.com/rsocket/rsocket-go)
 
 ### 15 Shell ⭐⭐⭐
 RSocket包含对应的命令行程序，对Sell支持完全没有问题。 目前主要有两个CLI程序，分别是rsoket-cli和rsc，rsc支持Spring RSocket。
