@@ -76,3 +76,4 @@ public class ServerExample {
 * vlingo wire: https://github.com/vlingo/vlingo-wire
 * RSocket Routing Broker: https://github.com/rsocket-routing/rsocket-routing-broker
 * Spring Retrosocket: Feign-like or Retrofit-like experience for declarative RSocket-based clients https://github.com/spring-projects-experimental/spring-retrosocket
+* Spring Tips: RSocket and Spring Security: https://www.youtube.com/watch?v=ER-mbWp2xYg
